@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ---- Base reset & typography ---- */
+* { -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+html, body { height: 100%; }
+body { @apply bg-white text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100; }
+
+
+/* Remove default link underlines; use utility .underline when needed */
+a { text-decoration: none; }
+
+
+/* Images & media should not overflow containers */
+img, video { max-width: 100%; height: auto; }
+
+
+/* Focus styles (keyboard-friendly) */
+:focus-visible { outline: 2px solid rgb(99 102 241 / 0.8); outline-offset: 2px; }
+
+
+/* Selection color */
+::selection { background: rgb(99 102 241 / 0.2); }
+
+
+/* ---- Components ---- */
+@layer components {
+.card { @apply rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900; }
+.badge { @apply rounded-full border px-2 py-1 text-xs text-neutral-700 dark:text-neutral-200 dark:border-neutral-700; }
+.link-underline { @apply underline underline-offset-4 decoration-neutral-300 dark:decoration-neutral-600 hover:decoration-neutral-500; }
+}
+
+
+/* ---- Utilities ---- */
+@layer utilities {
+.text-balance { text-wrap: balance; }
+}
+
+
+/* Optional: slim scrollbar for modern browsers */
+* { scrollbar-width: thin; scrollbar-color: rgb(163 163 163) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background-color: rgb(163 163 163 / 0.6); border-radius: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
